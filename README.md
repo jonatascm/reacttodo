@@ -7,21 +7,21 @@
 </p>
 
 
-# :blue_book: React Todo Project
+# :blue_book: React Todo Project v0.0.1
 
 ## Description:
+
 * Simple todo list system
 * Login and register implemented
 
 ## How to run locally
-*If you want change database configuration and database connection in:
 
-```
-package/backend/config/database.json
-```
-package/web/src/services/api.js
+* If you want change database configuration and database connection in:
 
-*Run these commands on project folder
+> package/backend/config/database.json
+> package/web/src/services/api.js
+
+* Run these commands on project folder
 
 > `yarn install`<br>
 > `yarn run backend:dev`<br>
@@ -29,7 +29,4 @@ package/web/src/services/api.js
 
 ## PrintScreens
 
-<img src="assets/login.png" alt="Login Page" width="200" height="300">
-<img src="assets/signup.png" alt="Register Page" width="200" height="300">
-<img src="assets/todo.png" alt="Todo Page" width="200" height="300">
-
+![Login Page](assets/login.png "Login Page") ![Register Page](assets/login.png "Register Page") ![Todo Page](assets/todo.png "Todo Page")
