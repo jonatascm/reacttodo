@@ -1,0 +1,5 @@
+{
+  "databasename": "reacttodo",
+  "port": 27017,
+  "host": "localhost"
+}

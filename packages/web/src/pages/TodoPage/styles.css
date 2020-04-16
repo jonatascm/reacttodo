@@ -1,0 +1,71 @@
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+    width: 100%;
+    align-items: center;
+}
+
+.loadingContainer {
+    margin-top: 10%;
+}
+
+.controlerContainer{
+    display: flex;
+    flex: 1;
+}
+
+.todoContainer{
+    display: flex;
+    width: 30%;
+    align-content: center;
+}
+
+.todoList{
+    flex: 1;
+    width: 50%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.addButton {
+    border: 0;
+    background-color: #e64a19;
+    border-radius: 2px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.5s;
+    flex: 1;
+    width: 10vw;
+}
+
+.signoutButton {
+    border: 0;
+    background-color: #e64a19;
+    border-radius: 2px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.5s;
+    flex: 1;
+    width: 10vw;
+    margin-left: 10%;
+}
+
+.addButton:hover {
+    background: #ac0800;
+}
+
+.plusIcon {
+    margin-right: 5%;
+}
+
+.trashIcon {
+    cursor: pointer;
+    color: #ac0800;
+}

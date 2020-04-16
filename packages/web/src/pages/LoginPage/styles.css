@@ -1,0 +1,27 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.logo {
+    margin-bottom: 2%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.signup {
+    text-align: center;
+}
+
+.linkAccount {
+    text-decoration: none;
+    color: #e64a19;
+}
+
+.linkAccount:hover {
+  color: #ac0800;
+}
