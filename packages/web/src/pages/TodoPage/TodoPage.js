@@ -27,7 +27,6 @@ export default function TodoPage() {
   const [loading, setLoading] = useState(true);
   const [todos, setTodos] = useState([]);
   const [todoModal, setTodoModal] = useState(false);
-  const [title, setTitle] = useState('');
 
   useEffect(()=>{
     fetchTodo();
@@ -81,7 +80,6 @@ export default function TodoPage() {
   }
 
   const openAddModal = () => {
-    setTitle('Create Todo')
     toggleModal();
   }
 
@@ -164,7 +162,7 @@ export default function TodoPage() {
         }}
         ariaHideApp={false}
       >
-        <TodoForm onSubmit={onSave} title={title} type={"create"}/>
+        <TodoForm onSubmit={onSave}/>
       </Modal>
     </div>
   );

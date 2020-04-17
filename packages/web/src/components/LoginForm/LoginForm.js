@@ -1,52 +1,71 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+import { Formik, Form } from 'formik';
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import * as Yup from 'yup';
 
 export default function LoginForm ({onSubmit}) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  
-  useEffect(() => {
-  },[]);
-
-  async function handleSubmit (e) {
-    e.preventDefault();
-
-    await onSubmit({
-      email,
-      password,
-    });
-
-    //setEmail('');
-    //setPassword('');
-  }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <h1>Login</h1>
-      <div className="input-block">
-        <label htmlFor="email">Email</label>
-        <input
-          type="text"
-          name="email"
-          id="email"
-          required
-          value={email}
-          onChange={ e => setEmail(e.target.value)}
-        />
-      </div>
+      <Formik
+      initialValues={{ email: '', password: '' }}
+      validationSchema={Yup.object({
+        password: Yup.string()
+          .required('Required'),
+        email: Yup.string()
+          .email('Invalid email address')
+          .required('Required'),
+      })}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          setSubmitting(false);
+          onSubmit(values);
+        }, 400);
+      }}
+      render={({ 
+        isSubmitting, 
+        touched, 
+        errors, 
+        values:{email, password}, 
+        handleChange 
+      }) => (
+        <Form>
+          <TextField
+            id="email"
+            name="email"
+            helperText={touched.email ? errors.email : ""}
+            error={touched.email && Boolean(errors.email)}
+            label="Email"
+            fullWidth
+            value={email}
+            onChange={handleChange}
 
-      <div className="input-block">
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          required
-          value={password}
-          onChange={ e => setPassword(e.target.value)}
-        />
-      </div>
-
-      <button type="submit">Sign In</button>
-    </form>
+          />
+          <TextField
+            id="password"
+            name="password"
+            type="password"
+            helperText={touched.password ? errors.password : ""}
+            error={touched.password && Boolean(errors.password)}
+            label="Password"
+            fullWidth
+            value={password}
+            onChange={handleChange}
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="raised"
+            color="primary"
+            disabled={isSubmitting}
+          >
+            Sign In
+          </Button>
+        </Form>
+      )}
+    />
+    </div>
   );
 }

@@ -68,3 +68,11 @@ form button[type=submit]:hover {
     background: #ac0800;
 }
 
+
+.errorText {
+    color: #ac0800;
+    font-size: 10px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
