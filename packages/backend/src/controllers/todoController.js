@@ -1,6 +1,6 @@
-const express = require('express');
-const authMiddleware = require('../middleware/auth');
-const Todo = require('../models/Todo');
+import express from 'express';
+import authMiddleware from '../middleware/auth';
+import Todo from '../models/Todo';
 
 const router = express.Router();
 router.use(authMiddleware);
@@ -91,5 +91,5 @@ router.post('/done/:TodoId',async (req, res) => {
 });
 
 
-module.exports = app => app.use('/todo', router);
+export default router;
 

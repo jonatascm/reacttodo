@@ -5,7 +5,7 @@ const api = create({
 });
 
 api.addAsyncRequestTransform(request => async () => {
-  const storeString  = await localStorage.getItem('@ReactTodoApi');  
+  const storeString  = localStorage.getItem('@ReactTodoApi');  
 
   if(storeString){
     const store = await JSON.parse(storeString);

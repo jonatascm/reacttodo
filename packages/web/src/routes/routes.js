@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import LoginPage from '../pages/LoginPage';
-import TodoPage from '../pages/TodoPage';
+import LoginPage from '../pages/LoginPage/LoginPage';
+import TodoPage from '../pages/TodoPage/TodoPage';
 import PrivateRoute from './private-route';
 
 const Routes = () => (

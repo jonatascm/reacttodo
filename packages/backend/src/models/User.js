@@ -1,7 +1,7 @@
-const mongoose = require('../database');
-const bcrypt = require('bcryptjs');
+import mongoose from '../database';
+import bcrypt from 'bcryptjs';
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = mongoose.Schema({
   name: {type: String, required: true},
   email: {type: String, required: true, unique: true, lowercase: true,},
   password: {type: String, required: true, select: false},
@@ -16,4 +16,4 @@ UserSchema.pre('save',async function(next) {
   next();
 })
 
-module.exports = mongoose.model('User', UserSchema);
+export default mongoose.model('User', UserSchema);

@@ -8,7 +8,6 @@
      "packages/*"
   ],
   "scripts": {
-    "backend:devkill": "yarn workspace @reactTodo/backend devkill",
     "backend:dev": "yarn workspace @reactTodo/backend dev",
     "backend:start": "yarn workspace @reactTodo/backend start",
     "web:start": "yarn workspace @reactTodo/web start"

@@ -1,15 +1,15 @@
-const express = require('express');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+import express from 'express';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+import User from '../models/User';
 
-const User = require('../models/User');
-const authConfig = require('../config/auth');
-
+dotenv.config();
 
 const router = express.Router();
 
 function generateToken(params = {}){
-  return jwt.sign(params, authConfig.secret, {
+  return jwt.sign(params, process.env.SECRET, {
     expiresIn: 2592000, //Month in seconds
   });
   
@@ -54,4 +54,4 @@ router.post('/authenticate', async (req, res) => {
   }
 });
 
-module.exports = app => app.use('/auth', router);
+export default router;

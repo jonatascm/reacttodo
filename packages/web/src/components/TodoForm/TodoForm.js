@@ -1,11 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 
 export default function TodoForm ({onSubmit, title, type="create"}) {
   const [isDone, setIsDones] = useState('');
   const [description, setDescription] = useState('');
-  
-  useEffect(() => {
-  },[]);
 
   async function handleSubmit (e) {
     e.preventDefault();

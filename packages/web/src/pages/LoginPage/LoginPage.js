@@ -3,8 +3,8 @@ import { Link, useHistory } from "react-router-dom";
 import Modal from 'react-modal';
 import Digital from 'react-activity/lib/Digital';
 
-import LoginForm from '../../components/LoginForm';
-import SignupForm from '../../components/SignupForm';
+import LoginForm from '../../components/LoginForm/LoginForm';
+import SignupForm from '../../components/SignupForm/SignupForm';
 
 import api from '../../services/api';
 
@@ -19,7 +19,7 @@ export default  function LoginPage() {
 
   useEffect(() =>{
     const getLogin = async () => {
-      const storeString = await localStorage.getItem('@ReactTodoApi');
+      const storeString = localStorage.getItem('@ReactTodoApi');
       if(storeString){
         const store = await JSON.parse(storeString);
         if(store && store.token){
@@ -39,7 +39,7 @@ export default  function LoginPage() {
   const onSubmit = async (data) => {
     try{
       const response = await api.post('/auth/authenticate', data);
-      await localStorage.setItem('@ReactTodoApi', JSON.stringify(response.data));
+      localStorage.setItem('@ReactTodoApi', JSON.stringify(response.data));
       history.push("/todo");
     }catch(err){
       console.log(err);

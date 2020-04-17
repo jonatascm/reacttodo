@@ -1,8 +1,9 @@
-const mongoose = require('mongoose');
-const dbConfig = require('../config/database');
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
+dotenv.config();
 
-mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`, {
+mongoose.connect(`mongodb://${process.env.HOST}:${process.env.PORT}/${process.env.DATABASE_NAME}`, {
   useNewUrlParser: true, 
   useUnifiedTopology: true,
 }).then(
@@ -16,4 +17,4 @@ mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.databas
 
 mongoose.Promise = global.Promise;
 
-module.exports = mongoose;
+export default mongoose;

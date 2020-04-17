@@ -14,7 +14,7 @@ import {
   Checkbox,
   Paper } from '@material-ui/core';
 
-import TodoForm from '../../components/TodoForm';
+import TodoForm from '../../components/TodoForm/TodoForm';
 
 import 'react-activity/lib/Digital/Digital.css';
 import './styles.css';
@@ -85,9 +85,9 @@ export default function TodoPage() {
     toggleModal();
   }
 
-  const onSignout = async (data) => {
+  const onSignout = data => {
     try{
-      await localStorage.setItem('@ReactTodoApi', '');
+      localStorage.setItem('@ReactTodoApi', '');
       history.push("/");
     }catch(err){
       console.log(err);

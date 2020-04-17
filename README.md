@@ -18,7 +18,7 @@
 
 * If you want change database configuration and database connection in:
 
-> package/backend/config/database.json
+> package/backend/config/.env
 > package/web/src/services/api.js
 
 * Run these commands on project folder
